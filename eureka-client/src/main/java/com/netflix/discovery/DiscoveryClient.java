@@ -1230,6 +1230,8 @@ public class DiscoveryClient implements EurekaClient {
                         }
                     }
                 }
+
+                fireEvent(new CacheDeltaEvent(instance));
             }
         }
         logger.debug("The total number of instances fetched by the delta processor : {}", deltaCount);
